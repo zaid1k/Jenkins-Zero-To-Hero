@@ -17,15 +17,6 @@ pipeline {
         sh 'node --version'
       }
     }
-    stages {
-        stage('DB') {
-            agent {
-                docker { 
-                    image 'mysql:latest' // Adjust version as needed
-                    args '-e MYSQL_ROOT_PASSWORD=password' // Provide appropriate MySQL root password
-                }
             }
             }
-        }
     }
-}
