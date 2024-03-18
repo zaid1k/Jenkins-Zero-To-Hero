@@ -25,12 +25,6 @@ pipeline {
                     args '-e MYSQL_ROOT_PASSWORD=password' // Provide appropriate MySQL root password
                 }
             }
-            steps {
-                script {
-                    def sqlCmd = "mysql -h host -u user -ppassword -e 'SELECT * FROM XYZ;' database_name"
-                    def result = sh(script: sqlCmd, returnStdout: true).trim()
-                    echo "Query result: ${result}"
-                }
             }
         }
     }
